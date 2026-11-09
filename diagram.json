@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "author": "Nhom FireGuard IoT",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 28.8, "left": -81.56, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -210.9,
+      "left": 23.4,
+      "attrs": { "temperature": "23.5" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -49.3, "left": -173, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -135.7, "left": -240.2, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led_g",
+      "top": 111.6,
+      "left": 301.4,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_y",
+      "top": 63.6,
+      "left": 263,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_r",
+      "top": 15.6,
+      "left": 224.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 167.15,
+      "left": 163.2,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 119.15,
+      "left": 153.6,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 71.15,
+      "left": 144,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -132,
+      "left": 318.6,
+      "attrs": { "volume": "10" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -32.2,
+      "left": 134.4,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "dht1:VCC", "red", [ "v-86.4", "h241.95" ] ],
+    [ "esp:GND.2", "dht1:GND", "black", [] ],
+    [ "esp:15", "dht1:SDA", "green", [ "h28.8", "v-297.6" ] ],
+    [ "esp:3V3", "pot1:VCC", "red", [] ],
+    [ "esp:GND.1", "pot1:GND", "black", [] ],
+    [ "esp:34", "pot1:SIG", "orange", [] ],
+    [ "esp:3V3", "pot2:VCC", "red", [ "h-114.25" ] ],
+    [ "esp:GND.1", "pot2:GND", "black", [] ],
+    [ "esp:35", "pot2:SIG", "purple", [] ],
+    [ "esp:26", "r1:1", "green", [ "h-47.85", "v134.4", "h268.8", "v-105.6" ] ],
+    [ "r1:2", "led_g:A", "green", [] ],
+    [ "led_g:C", "esp:GND.2", "black", [ "h-210.8", "v-96" ] ],
+    [ "esp:27", "r2:1", "gold", [ "h-38.25", "v115.2", "h249.6", "v-144" ] ],
+    [ "r2:2", "led_y:A", "gold", [] ],
+    [ "led_y:C", "esp:GND.2", "black", [ "h-162.8", "v-48" ] ],
+    [ "esp:14", "r3:1", "red", [ "h-28.65", "v96", "h230.4", "v-182.4" ] ],
+    [ "r3:2", "led_r:A", "red", [] ],
+    [ "led_r:C", "esp:GND.2", "black", [ "h-239.6", "h19.2" ] ],
+    [ "esp:25", "bz1:2", "blue", [ "h-57.45", "v153.6", "h547.6" ] ],
+    [ "bz1:1", "esp:GND.2", "black", [ "h-268.8", "v105.6" ] ],
+    [ "esp:13", "btn1:1.l", "gray", [ "h-19.05", "v57.6", "h192", "v-268.8" ] ],
+    [ "btn1:2.l", "esp:GND.2", "black", [ "h-48", "v57.8" ] ]
+  ],
+  "dependencies": {}
+}
