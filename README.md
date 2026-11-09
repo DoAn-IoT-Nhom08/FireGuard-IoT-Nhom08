@@ -31,6 +31,6 @@ Trường Đại học An Giang - Khoa Công nghệ thông tin - Lớp DH24PM
 
 ## Mô phỏng
 Dự án được mô phỏng trên Wokwi:  
-[Link Wokwi của nhóm](https://wokwi.com/projects/479739727511293953)
+[Link Wokwi của nhóm]([https://wokwi.com/projects/479739727511293953](https://wokwi.com/projects/479739727511293953))
 
 ## Cấu trúc thư mục
